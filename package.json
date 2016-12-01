@@ -4,7 +4,8 @@
   "description": "A text-based choose-your-own adventure game built with AngularJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --inline",
+    "build": "webpack" 
   },
   "repository": {
     "type": "git",
