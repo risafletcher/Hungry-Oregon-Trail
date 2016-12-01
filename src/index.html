@@ -2,7 +2,7 @@
   <head>
     <title>Hungry Oregon Trail</title>
   </head>
-  <body>
+  <body ng-app="appName">
     <h1>Hungry Oregon Trail</h1>
     <p>Welcome to the harrowing "game" of Oregon Trail.
       The government has sent you and your family out into 
@@ -16,5 +16,31 @@
     <p>
       Uh-oh! You've encountered a river. What do you do?
     </p>
+    <div>
+      <p>Make some kind of choice</p>
+      <button ng-click="choice1 = !choice1">choice 1</button>
+      <button ng-click="choice2 = !choice2">choice 2</button>
+    </div>
+    <div ng-show="choice1">
+      <p>Choice 1 lead here. Make another choice</p>
+      <button ng-click="choice3 = !choice3">choice 3</button>
+      <button ng-click="choice4 = !choice4">choice 4</button>
+    </div>
+    <div ng-show="choice2">
+      <p>Choice 2 lead here. Make another choice</p>
+      <button ng-click="choice5 = !choice5">choice 5</button>
+      <button ng-click="choice6 = !choice6">choice 6</button>
+    </div>
+    <div ng-show="choice2">
+      <p>Choice 3 lead here. Make another choice</p>
+      <button ng-click="choice7 = !choice7">choice 7</button>
+      <button ng-click="choice8 = !choice8">choice 8</button>
+    </div>
+    <div ng-show="choice3">
+      <p>Choice 4 lead here. Make another choice</p>
+      <button ng-click="choice9 = !choice9">choice 9</button>
+      <button ng-click="choice10 = !choice10">choice 10</button>
+    </div>
+            
   </body>
 </html>

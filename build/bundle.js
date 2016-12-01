@@ -52,14 +52,12 @@
 	
 	__webpack_require__(3);
 	
-	var _controllers = __webpack_require__(7);
-	
-	var _controllers2 = _interopRequireDefault(_controllers);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// import controllers from './controllers';
+	
 	//creating module for app
-	_angular2.default.module('appName', [_controllers2.default]);
+	_angular2.default.module('appName', []);
 
 /***/ },
 /* 1 */
@@ -32463,32 +32461,6 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _angular = __webpack_require__(1);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//controllers will go into this 'bucket'
-	var controllers = _angular2.default.module('controllers', []);
-	
-	controllers.controller('controllerName', controllerFn);
-	
-	exports.default = controllers.name;
 
 /***/ }
 /******/ ]);
