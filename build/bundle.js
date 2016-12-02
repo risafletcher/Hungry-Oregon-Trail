@@ -32525,6 +32525,10 @@
 	    $scope.addFood = function () {
 	        $scope.foodLevel = $scope.foodLevel + (Math.floor(Math.random() * (20 - 11)) + 10);
 	    };
+	
+	    $scope.restart = function () {
+	        $scope.foodLevel = 100;
+	    };
 	}
 
 /***/ },

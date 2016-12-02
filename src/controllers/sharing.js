@@ -20,7 +20,7 @@ export default function sharingController($scope) {
         } else if($scope.percentage > 10 && $scope.percentage <= 50) {
             $scope.fate = 'The tribe decides you aren\'t worth it. They take your food and leave you to die.';
         } else {
-            $scope.fate = 'The Indians respect your generosity and take you. They eventually help you to Oregon.';
+            $scope.fate = 'The Indians respect your generosity and take you. They eventually help you to Oregon. YOU WIN!';
         }
     };
 }

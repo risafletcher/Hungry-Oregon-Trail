@@ -1,20 +1,24 @@
 <html>
   <head>
     <title>Hungry Oregon Trail</title>
+    <link href="https://fonts.googleapis.com/css?family=Ewert|Open+Sans" rel="stylesheet">
   <link href="styles.css" rel="stylesheet"></head>
   <body ng-app="appName" ng-controller="food">
     <h1>Hungry Oregon Trail</h1>
-    <div ng-hide="choice">
-    <p>Welcome to the harrowing "game" of Oregon Trail.
-      The government has sent you and your family out into 
-      the wild abandon with some food and a wagon with which
-      to make the journey across the US.</p>
-    <p>As you begin your journey, your hopes are high,
-      and your bellies full.</p>
-      <p>Current Food Level: {{foodLevel}}</p>
-      <p>Uh-oh! You've encountered a river. What do you do?</p>
-      <button ng-click="choice1 = !choice1; choice = !choice; eatFood()">Ford the River</button>
-      <button ng-click="choice2 = !choice2; choice = !choice; eatFood()">Take the Ferry</button>
+    <div ng-hide="beginGame">
+      <p>Welcome to the harrowing game of Oregon Trail.
+        The government has sent you and your family out into 
+        the wild abandon with some food and a wagon with which
+        to make the journey across the US.</p>
+      <p>As you begin your journey, your hopes are high,
+        and your bellies full.</p>
+        <button ng-click="choice = !choice; beginGame = !beginGame">Start</button>
+      </div>
+      <div ng-show="choice">
+        <p>Current Food Level: {{foodLevel}}</p>
+        <p>Uh-oh! You've encountered a river. What do you do?</p>
+        <button ng-click="choice1 = !choice1; choice = !choice; eatFood()">Ford the River</button>
+        <button ng-click="choice2 = !choice2; choice = !choice; eatFood()">Take the Ferry</button>
     </div>
     <div ng-show="choice1">
       <p>Current Food Level: {{foodLevel}}</p>
@@ -24,7 +28,9 @@
     </div>
     <div ng-show="choice2">
       <p>Current Food Level: {{foodLevel}}</p>
-      <p>You took the ferry and were murdered abord the ship. GAME OVER!</p>
+      <p>You took the ferry and were murdered aboard the ship. </p>
+      <p><b>GAME OVER!</b></p>
+      <button ng-click="beginGame = !beginGame; restart(); choice2 = !choice2">Play again</button>
     </div>
     <div ng-show="choice3">
       <p>Current Food Level: {{foodLevel}}</p>
@@ -50,7 +56,9 @@
     <div ng-show="choice6" ng-controller="sharing">
       <div ng-hide="giveDivIndian">
         <p>Current Food Level: {{foodLevel}}</p>
-        <p>You have new food stores as a reward for your murderous rage. The bad news is that you were seen doing it. The Native people that saw you do it are asking you to spare some food. What percentage of your food are willing to give them?</p>
+        <p>You have new food stores as a reward for your murderous rage. The bad news is that you were seen doing it. 
+          The Native people that saw you do it are asking you to spare some food. 
+          What percentage of your food are willing to give them?</p>
         <input type="number" min="0" max="100" ng-model="percentage">
         <button ng-click="submitIndian(); giveDivIndian = !giveDivIndian">Submit</button>
       </div>
@@ -58,11 +66,15 @@
     </div>
     <div ng-show="choice7">
       <p>Current Food Level: {{foodLevel}}</p>
-      <p>The Native people suspected that you were going to try to take their shit, so they killed you. GAME OVER!</p>
+      <p>The Native people suspected that you were going to try to take their shit, so they killed you.</p> 
+      <p><b>GAME OVER!</b></p>
+      <button ng-click="beginGame = !beginGame; restart(); choice7 = !choice7">Play again</button>
     </div>
     <div ng-show="choice8">
       <p>Current Food Level: {{foodLevel}}</p>
-      <p>You sliced your arm open while trying to sharpen a blade. You bled out and died. GAME OVER!</p>
+      <p>You sliced your arm open while trying to sharpen a blade. You bled out and died.</p> 
+      <p><b>GAME OVER!</b></p>
+      <button ng-click="beginGame = !beginGame; restart(); choice8 = !choice8">Play again</button>
     </div>  
   <script type="text/javascript" src="bundle.js"></script></body>
 </html>
