@@ -39,16 +39,21 @@
       <button ng-click="choice8 = !choice8; choice4 = !choice4">Make weapons to hunt</button>
     </div>
     <div ng-show="choice5" ng-controller="sharing">
-      <p>Current Food Level: {{foodLevel}}</p>
-      <p>What percentage of your food are you willing to offer?</p>
-      <input type="number" min="0" max="100" ng-model="percentage">
+      <div ng-hide="giveDivWagon">
+        <p>Current Food Level: {{foodLevel}}</p>
+        <p>What percentage of your food are you willing to offer?</p>
+        <input type="number" min="0" max="100" ng-model="percentage">
+        <button ng-click="submitWagon(); giveDivWagon = !giveDivWagon">Submit</button>
+      </div>
       <p>{{fate}}</p>
     </div>
     <div ng-show="choice6" ng-controller="sharing">
-      <p>Current Food Level: {{foodLevel}}</p>
-      <p>You have new food stores as a reward for your murderous rage. The bad news is that you were seen doing it. The Native people that saw you do it are asking you to spare some food. What percentage of your food are willing to give them?</p>
-      <input type="number" min="0" max="100" ng-model="percentage">
-      <button ng-submit=submit()>Submit</button>
+      <div ng-hide="giveDivIndian">
+        <p>Current Food Level: {{foodLevel}}</p>
+        <p>You have new food stores as a reward for your murderous rage. The bad news is that you were seen doing it. The Native people that saw you do it are asking you to spare some food. What percentage of your food are willing to give them?</p>
+        <input type="number" min="0" max="100" ng-model="percentage">
+        <button ng-click="submitIndian(); giveDivIndian = !giveDivIndian">Submit</button>
+      </div>
       <p>{{fate}}</p>
     </div>
     <div ng-show="choice7">
