@@ -32501,17 +32501,25 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	exports.default = foodController;
 	foodController.$inject = ['$scope'];
 	
 	function foodController($scope) {
-	  $scope.foodLevel = 100;
-	  $scope.food = function () {
-	    // foodLevel = foodLevel - (Math.floor(Math.random() * (max - min + 1)) + 3);
-	    $scope.foodLevel = $scope.foodLevel - Math.floor(Math.random() * 20);
-	  };
+	    $scope.foodLevel = 100;
+	
+	    $scope.eatFood = function () {
+	        $scope.foodLevel = $scope.foodLevel - (Math.floor(Math.random() * (20 - 11)) + 10);
+	    };
+	
+	    $scope.loseFood = function () {
+	        $scope.foodLevel = $scope.foodLevel * 0;
+	    };
+	
+	    $scope.addFood = function () {
+	        $scope.foodLevel = $scope.foodLevel + (Math.floor(Math.random() * (20 - 11)) + 10);
+	    };
 	}
 
 /***/ }

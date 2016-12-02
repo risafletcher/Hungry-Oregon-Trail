@@ -8,11 +8,11 @@ export default function foodController($scope) {
     };
 
     $scope.loseFood = function() {
-        $scope.foodLevel = scope.foodLevel * 0;
+        $scope.foodLevel = $scope.foodLevel * 0;
     };
 
     $scope.addFood = function() {
         $scope.foodLevel = $scope.foodLevel + (Math.floor(Math.random() * (20 - 11)) + 10);
-    ;}
+    };
   
 }

@@ -13,46 +13,53 @@
       and your bellies full.</p>
       <p>Current Food Level: {{foodLevel}}</p>
       <p>Uh-oh! You've encountered a river. What do you do?</p>
-      <button ng-click="choice1 = !choice1; choice = !choice; food()">Ford the River</button>
-      <button ng-click="choice2 = !choice2; choice = !choice; food()">Take the Ferry</button>
+      <button ng-click="choice1 = !choice1; choice = !choice; eatFood()">Ford the River</button>
+      <button ng-click="choice2 = !choice2; choice = !choice; eatFood()">Take the Ferry</button>
     </div>
     <div ng-show="choice1">
       <p>Current Food Level: {{foodLevel}}</p>
       <p>Your wagon has tipped over. What should you do?</p>
-      <button ng-click="choice3 = !choice3; choice1 = !choice1">Leave family and swim ashore.</button>
-      <button ng-click="choice4 = !choice4; choice1 = !choice1">Stay in the water and try to save your drowning family.</button>
+      <button ng-click="choice3 = !choice3; choice1 = !choice1; eatFood()">Leave family and swim ashore.</button>
+      <button ng-click="choice4 = !choice4; choice1 = !choice1; loseFood()">Stay in the water and try to save your drowning family.</button>
     </div>
     <div ng-show="choice2">
       <p>Current Food Level: {{foodLevel}}</p>
       <p>You took the ferry and were murdered abord the ship. GAME OVER!</p>
     </div>
     <div ng-show="choice3">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>You made it ashore, not giving a shit about the rest of your family. You see another wagon approaching. What do you do?</p>
-      <button ng-click="choice5 = !choice5; choice3 = !choice3">Offer food in exchange for a ride.</button>
-      <button ng-click="choice6 = !choice6; choice3 = !choice3">Kill everyone on board and take their food.</button>
+      <button ng-click="choice5 = !choice5; choice3 = !choice3; eatFood()">Offer food in exchange for a ride.</button>
+      <button ng-click="choice6 = !choice6; choice3 = !choice3; addFood()">Kill everyone on board and take their food.</button>
     </div>
     <div ng-show="choice4">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>You managed to get everyone ashore alive, but realize that all of your food was lost in the water. What do you do?</p>
       <button ng-click="choice7 = !choice7; choice4 = !choice4">Talk to the Native People</button>
       <button ng-click="choice8 = !choice8; choice4 = !choice4">Make weapons to hunt</button>
     </div>
     <div ng-show="choice5">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>Choice 5 lead here. Make another choice.</p>
-      <button ng-click="choice11 = !choice11; choice5 = !choice5">choice 11</button>
-      <button ng-click="choice12 = !choice12; choice5 = !choice5">choice 12</button>
+      <button ng-click="choice11 = !choice11; choice5 = !choice5; eatFood()">choice 11</button>
+      <button ng-click="choice12 = !choice12; choice5 = !choice5; eatFood()">choice 12</button>
     </div>
     <div ng-show="choice6">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>Choice 6 lead here. Make another choice</p>
-      <button ng-click="choice13 = !choice13; choice6 = !choice6">choice 13</button>
-      <button ng-click="choice14 = !choice14; choice6 = !choice6">choice 14</button>
+      <button ng-click="choice13 = !choice13; choice6 = !choice6; eatFood()">choice 13</button>
+      <button ng-click="choice14 = !choice14; choice6 = !choice6; eatFood()">choice 14</button>
     </div>
     <div ng-show="choice7">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>The Native people suspected that you were going to try to take their shit, so they killed you. GAME OVER!</p>
     </div>
     <div ng-show="choice8">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>You sliced your arm open while trying to sharpen a blade. You bled out and died. GAME OVER!</p>
     </div>
     <div ng-show="choice9">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>Choice 9 lead here. Make another choice</p>
       <button ng-click="choice19 = !choice19; choice9 = !choice9">choice 19</button>
       <button ng-click="choice20 = !choice20; choice9 = !choice9">choice 20</button>
