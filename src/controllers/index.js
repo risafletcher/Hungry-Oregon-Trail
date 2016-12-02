@@ -6,6 +6,6 @@ import sharing from './sharing';
 const controllers = angular.module('controllers',[]);
 
 controllers.controller('food', food);
-controllers.controller('sharing', sharing)
+controllers.controller('sharing', sharing);
 
 export default controllers.name;

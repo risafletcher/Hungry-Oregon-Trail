@@ -32485,12 +32485,17 @@
 	
 	var _food2 = _interopRequireDefault(_food);
 	
+	var _sharing = __webpack_require__(9);
+	
+	var _sharing2 = _interopRequireDefault(_sharing);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	//controllers will go into this 'bucket'
 	var controllers = _angular2.default.module('controllers', []);
 	
 	controllers.controller('food', _food2.default);
+	controllers.controller('sharing', _sharing2.default);
 	
 	exports.default = controllers.name;
 
@@ -32520,6 +32525,31 @@
 	    $scope.addFood = function () {
 	        $scope.foodLevel = $scope.foodLevel + (Math.floor(Math.random() * (20 - 11)) + 10);
 	    };
+	}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = sharingController;
+	sharingController.$inject = ['$scope'];
+	
+	function sharingController($scope) {
+	    $scope.fate = '';
+	    $scope.percentage = 60;
+	
+	    if ($scope.percentage <= 10) {
+	        $scope.fate = 'The wagon\'s occupants accuse you of miserliness and kill you.';
+	    } else if ($scope.percentage > 10 && $scope.percentage <= 50) {
+	        $scope.fate = 'The wagon\'s occupants don\'t want another mouth to feed, so they kill you.';
+	    } else {
+	        $scope.fate = 'You were too generous. Your food eventually spoiled and you all died.';
+	    }
 	}
 
 /***/ }
