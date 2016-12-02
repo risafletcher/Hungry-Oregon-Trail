@@ -32555,7 +32555,7 @@
 	    $scope.submitIndian = function () {
 	        $scope.fate = '';
 	        if ($scope.percentage <= 10) {
-	            $scope.fate = 'The Indians accuse you of miserliness and kill you.';
+	            $scope.fate = 'The Indians accuse you of miserliness and kill you slowly.';
 	        } else if ($scope.percentage > 10 && $scope.percentage <= 50) {
 	            $scope.fate = 'The tribe decides you aren\'t worth it. They take your food and leave you to die.';
 	        } else {
