@@ -2,7 +2,7 @@
   <head>
     <title>Hungry Oregon Trail</title>
   <link href="styles.css" rel="stylesheet"></head>
-  <body ng-app="appName">
+  <body ng-app="appName" ng-controller="food">
     <h1>Hungry Oregon Trail</h1>
     <div ng-hide="choice">
     <p>Welcome to the harrowing "game" of Oregon Trail.
@@ -11,16 +11,19 @@
       to make the journey across the US.</p>
     <p>As you begin your journey, your hopes are high,
       and your bellies full.</p>
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>Uh-oh! You've encountered a river. What do you do?</p>
-      <button ng-click="choice1 = !choice1; choice = !choice">Ford the River</button>
-      <button ng-click="choice2 = !choice2; choice = !choice">Take the Ferry</button>
+      <button ng-click="choice1 = !choice1; choice = !choice; food()">Ford the River</button>
+      <button ng-click="choice2 = !choice2; choice = !choice; food()">Take the Ferry</button>
     </div>
     <div ng-show="choice1">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>Your wagon has tipped over. What should you do?</p>
       <button ng-click="choice3 = !choice3; choice1 = !choice1">Leave family and swim ashore.</button>
       <button ng-click="choice4 = !choice4; choice1 = !choice1">Stay in the water and try to save your drowning family.</button>
     </div>
     <div ng-show="choice2">
+      <p>Current Food Level: {{foodLevel}}</p>
       <p>You took the ferry and were murdered abord the ship. GAME OVER!</p>
     </div>
     <div ng-show="choice3">

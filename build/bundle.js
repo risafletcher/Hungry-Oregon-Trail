@@ -52,12 +52,14 @@
 	
 	__webpack_require__(3);
 	
+	var _controllers = __webpack_require__(7);
+	
+	var _controllers2 = _interopRequireDefault(_controllers);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// import controllers from './controllers';
-	
 	//creating module for app
-	_angular2.default.module('appName', []);
+	_angular2.default.module('appName', [_controllers2.default]);
 
 /***/ },
 /* 1 */
@@ -32461,6 +32463,56 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(1);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _food = __webpack_require__(8);
+	
+	var _food2 = _interopRequireDefault(_food);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	//controllers will go into this 'bucket'
+	var controllers = _angular2.default.module('controllers', []);
+	
+	controllers.controller('food', _food2.default);
+	
+	exports.default = controllers.name;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = foodController;
+	foodController.$inject = ['$scope'];
+	
+	function foodController($scope) {
+	  $scope.foodLevel = 100;
+	  $scope.food = function () {
+	    // foodLevel = foodLevel - (Math.floor(Math.random() * (max - min + 1)) + 3);
+	    $scope.foodLevel = $scope.foodLevel - Math.floor(Math.random() * 20);
+	  };
+	}
 
 /***/ }
 /******/ ]);
