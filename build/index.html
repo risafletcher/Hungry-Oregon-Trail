@@ -35,20 +35,20 @@
     <div ng-show="choice4">
       <p>Current Food Level: {{foodLevel}}</p>
       <p>You managed to get everyone ashore alive, but realize that all of your food was lost in the water. What do you do?</p>
-      <button ng-click="choice7 = !choice7; choice4 = !choice4">Talk to the Native People</button>
+      <button ng-click="choice7 = !choice7; choice4 = !choice4">Talk to the Native people</button>
       <button ng-click="choice8 = !choice8; choice4 = !choice4">Make weapons to hunt</button>
     </div>
-    <div ng-show="choice5">
+    <div ng-show="choice5" ng-controller="sharing">
       <p>Current Food Level: {{foodLevel}}</p>
-      <p>Choice 5 lead here. Make another choice.</p>
-      <button ng-click="choice11 = !choice11; choice5 = !choice5; eatFood()">choice 11</button>
-      <button ng-click="choice12 = !choice12; choice5 = !choice5; eatFood()">choice 12</button>
+      <p>What percentage of your food are you willing to offer?</p>
+      <input type="number" min="0" max="100" ng-model="percentage">
+      <p>{{fate}}</p>
     </div>
-    <div ng-show="choice6">
+    <div ng-show="choice6" ng-controller="sharing">
       <p>Current Food Level: {{foodLevel}}</p>
-      <p>Choice 6 lead here. Make another choice</p>
-      <button ng-click="choice13 = !choice13; choice6 = !choice6; eatFood()">choice 13</button>
-      <button ng-click="choice14 = !choice14; choice6 = !choice6; eatFood()">choice 14</button>
+      <p>You have new food stores as a reward for your murderous rage. The bad news is that you were seen doing it. The Native people that saw you do it are asking you to spare some food. What percentage of your food are willing to give them?</p>
+      <input type="number" min="0" max="100" ng-model="percentage">
+      <p>{{fate}}</p>
     </div>
     <div ng-show="choice7">
       <p>Current Food Level: {{foodLevel}}</p>
