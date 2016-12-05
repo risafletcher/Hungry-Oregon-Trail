@@ -1,6 +1,4 @@
-/* globals angular, chai */
-
-const { assert } = chai;
+/* globals angular, assert */
 
 describe( 'food counter controller', () => {
 
@@ -34,5 +32,12 @@ describe( 'food counter controller', () => {
         $scope.loseFood();
         assert.equal($scope.foodLevel, 0);
     });
+
+    it('trys your luck when food is less than 80 pounds', () => {
+        $scope.foodLevel = 79;
+        $scope.eatFood();
+
+
+    })
 
 });

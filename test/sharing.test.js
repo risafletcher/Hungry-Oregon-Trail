@@ -1,5 +1,6 @@
 /* globals angular, chai */
-const { assert } = chai;
+
+const assert = chai.assert;
 
 describe('food sharing controller', () => {
 
