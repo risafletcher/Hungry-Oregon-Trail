@@ -51,7 +51,7 @@
           <p>What percentage of your food are you willing to offer?</p>
           <div >
           <input type="number" min="0" max="100" ng-model="percentage">
-          <button ng-click="submitWagon(); choice9 =!choice9; choice5 = !choice5">Submit</button>
+          <button ng-click="submitWagon(); choice9 = choice9; $parent.choice5 = !$parent.choice5">Submit</button>
           </div>
       </div>
       <div ng-show="choice9">
@@ -62,7 +62,7 @@
           <p class="currentFood">Current Food Level: {{foodLevel}}</p>
           <p>You have new food stores as a reward for your murderous rage. The bad news is that you were seen doing it. The Native people that saw you do it are asking you to spare some food. What percentage of your food are willing to give them?</p>
           <input type="number" min="0" max="100" ng-model="percentage">
-          <button ng-click="submitIndian(); choice10 = !choice10; choice6 = !choice6">Submit</button>
+          <button ng-click="submitIndian(); choice10 = !choice10; $parent.choice6 = !$parent.choice6">Submit</button>
       </div>
       <div ng-show="choice10">
         <p>{{fate}}</p>
