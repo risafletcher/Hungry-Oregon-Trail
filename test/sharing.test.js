@@ -1,5 +1,3 @@
-// const {assert} = chai;
-
 describe('food sharing controller', () => {
 
     beforeEach(angular.mock.module('controllers'));
@@ -44,6 +42,6 @@ describe('food sharing controller', () => {
     it('indians appreciate your generosity and take you to oregon', () => {
         $scope.percentage = 75;
         $scope.submitIndian();
-        assert.equal($scope.fate, 'The Indians respect your generosity and take you. They eventually help you to Oregon.');
+        assert.equal($scope.fate, 'The Indians respect your generosity and take you. They eventually help you to Oregon. YOU WIN!');
     });
 });
