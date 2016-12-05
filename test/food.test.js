@@ -42,6 +42,6 @@ describe( 'food counter controller', () => {
     it('reduces food level to zero', () => {
         $scope.loseFood();
         assert.equal($scope.foodLevel, 0);
-    })
+    });
 
 });
