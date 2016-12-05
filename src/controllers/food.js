@@ -24,6 +24,8 @@ export default function foodController($scope, $window) {
                 $scope.foodLevel = food - random; 
                 $window.alert(`${luck[index]}. You lost ${random} pounds of food.`);       
             }
+        } else {
+            $scope.foodLevel = food;
         }
     };
     

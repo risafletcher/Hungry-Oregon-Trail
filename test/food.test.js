@@ -33,11 +33,10 @@ describe( 'food counter controller', () => {
         assert.equal($scope.foodLevel, 0);
     });
 
-    it('trys your luck when food is less than 80 pounds', () => {
-        $scope.foodLevel = 79;
-        $scope.eatFood();
-
-
-    })
+    it('tries your luck when food is less than 80 pounds', () => {
+        $scope.foodLuck(79);
+        console.log('food level: ', $scope.foodLevel);
+        assert.notEqual(79, $scope.foodLevel);
+    });
 
 });
