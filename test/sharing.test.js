@@ -1,3 +1,7 @@
+/* globals angular, chai */
+
+const assert = chai.assert;
+
 describe('food sharing controller', () => {
 
     beforeEach(angular.mock.module('controllers'));
